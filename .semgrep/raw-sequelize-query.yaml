@@ -1,0 +1,6 @@
+rules:
+  - id: raw-sequelize-query
+    languages: [typescript, javascript]
+    severity: WARNING
+    message: Вызов .query() с интерполяцией данных в template string — проверить параметризацию
+    pattern: $DB.query(`...${$X}...`, ...)

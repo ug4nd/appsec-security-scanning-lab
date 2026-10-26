@@ -1,0 +1,16 @@
+name: SAST - Semgrep
+on:
+  pull_request:
+    branches: [master]
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@v4
+      - run: semgrep ci --config .semgrep/ --config p/owasp-top-ten --sarif --output=semgrep-results.sarif
+      - uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: semgrep-results.sarif
