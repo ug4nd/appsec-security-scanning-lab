@@ -4,6 +4,9 @@ on:
     branches: [master]
   push:
     branches: [master]
+permissions:
+  contents: read
+  security-events: write
 jobs:
   semgrep:
     runs-on: ubuntu-latest
