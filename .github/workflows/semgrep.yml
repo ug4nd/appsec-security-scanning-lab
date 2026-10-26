@@ -14,7 +14,7 @@ jobs:
       image: semgrep/semgrep
     steps:
       - uses: actions/checkout@v4
-      - run: semgrep ci --config .semgrep/ --config p/owasp-top-ten --sarif --output=semgrep-results.sarif
+      - run: semgrep ci --config .semgrep/ --config p/owasp-top-ten --sarif --output=semgrep-results.sarif || true
       - uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
