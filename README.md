@@ -10,7 +10,7 @@
 | SCA | Trivy | CI-workflow `.github/workflows/trivy.yml` (PR, push, раз в сутки), lockfile в репозитории, исключения в `.trivyignore` с причиной |
 | DAST | OWASP ZAP | Ручной обход, AJAX Spider, Active Scan по `127.0.0.1:3000`, отчёт в `reports/zap/` |
 
-## Результаты (2026-11-12)
+## Результаты
 
 - Semgrep: 40 находок
 - Trivy: 35 (6 Critical, 29 High)
